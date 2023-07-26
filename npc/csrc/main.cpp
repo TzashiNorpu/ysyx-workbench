@@ -9,6 +9,7 @@
 static TOP_NAME dut;
 void nvboard_bind_all_pins(Vtop* top);
 #define LOOP 1000000
+
 static void single_cycle() {
   dut.clk = 0; dut.eval();
   dut.clk = 1; dut.eval();

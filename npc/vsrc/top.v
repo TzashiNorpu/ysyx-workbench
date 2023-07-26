@@ -1,7 +1,7 @@
 module top (
     input clk,
     input rst,
-    input [7:0] sw,
+    input [16:0] sw,
     input ps2_clk,
     input ps2_data,
     output [15:0] ledr,
@@ -25,6 +25,11 @@ module top (
 example led1(
     .clk(clk),
     .rst(rst),
+    .ledr(ledr)
+);
+
+switch switch1(
+    .sw(sw),
     .ledr(ledr)
 );
 
