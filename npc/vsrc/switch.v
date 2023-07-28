@@ -1,4 +1,4 @@
-module switch(
+module assign1(
   input [9:0] sw,
   output [1:0] ledr
 );

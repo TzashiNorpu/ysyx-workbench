@@ -1,7 +1,7 @@
 module top (
     input clk,
     input rst,
-    input [16:0] sw,
+    input [15:0] sw,
     input ps2_clk,
     input ps2_data,
     output [15:0] ledr,
@@ -22,15 +22,25 @@ module top (
     output [7:0] seg7
 );
 
+/*
 example led1(
     .clk(clk),
     .rst(rst),
-    .ledr(ledr)
+    .ledr({ledr[15:10]})
 );
 
-switch switch1(
-    .sw(sw),
-    .ledr(ledr)
+assign1 switch1(
+    .sw({sw[9:0]}),
+    .ledr({ledr[1:0]})
+);
+*/
+
+assign2 ass2(
+    .sw({sw[7:0]}),
+    .enable({sw[8]}),
+    .pilot({ledr[4]}),
+    .ledr({ledr[2:0]}),
+    .o_seg0(seg0)
 );
 
 endmodule
